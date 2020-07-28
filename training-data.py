@@ -25,6 +25,8 @@ def DataCapture(var):
         cv2.imshow('image', frame)
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break
+        elif (count/5) > 250:
+            break
 
     cap.release()
     cv2.destroyAllWindows()
@@ -32,4 +34,4 @@ def DataCapture(var):
 
 gesture = input('Input the gesture you want to capture')
 DataCapture(gesture)
-##You can change 'scissor'---> to anything(Rock,paper,scissor) accordingly.
+
