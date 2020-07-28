@@ -1,13 +1,27 @@
 import os
 import cv2
 
-# write your code here to open your laptop's camera
-# and store images for rock paper scissors
+cap = cv2.VideoCapture(0)
+count = 0
+while (cap.isOpened()):
+    rep, frame = cap.read()
 
-# I would highly recommend storing these images in folders stucture like below:
-# training_data\
-#           |-- empty\
-#           |-- rock\
-#           |-- paper\
-#           |-- scissors\
-# having a folder structure like this will make it easy for you to read the images while pre-processing
+    if rep == True:
+
+        #gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+        #out.write(frame)
+        font = cv2.FONT_HERSHEY_PLAIN
+        frame = cv2.rectangle(frame, (100,100), (400,400),(255,0,0), 5)
+        frame = cv2.putText(frame, "count="+str(count/5), (300, 420), font,1 , (255, 0, 0), 3)
+        if count%5 == 0:
+            cv2.imwrite('scissor' + str(count/5) + '.jpg', frame[100:400,100:400])
+            print('Number of pictures captured: {}' .format(count/5))
+        count+= 1
+
+        cv2.imshow('image', frame)
+        if cv2.waitKey(1) & 0xFF == ord('q'):
+            break
+cap.release()
+cv2.destroyAllWindows()
+
+##You can change 'scissor'---> to anything(Rock,paper,scissor) accordingly.
