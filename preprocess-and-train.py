@@ -2,7 +2,7 @@ import os
 import cv2
 from model import generate_model
 
-TRAINING_DATA_DIR = "training_data"
+TRAINING_DATA_DIR = r'C:\\Users\gs199\PycharmProjects\RockPaperScissorGame\training_data'
 
 # here write code to pre process the images as required
 # but make sure to have a copy of the original training data
