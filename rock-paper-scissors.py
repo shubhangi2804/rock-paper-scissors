@@ -49,7 +49,7 @@ def winner(move_by_user, move_by_cmp):
 
     if move_by_cmp =='rock':
         if move_by_user == 'scissors' :
-            print('Uer wins')
+            print('User wins')
 
     if move_by_user=='empty':
         print('Place your hand gesture correcty!')
@@ -69,6 +69,7 @@ def main():
         if (rep==True):
             font = cv2.FONT_HERSHEY_PLAIN
             frame = cv2.rectangle(frame, (100, 100), (400, 400), (255, 0, 0), 5)
+            frame = cv2.putText(frame, "Press 'c' to capture Image " , (95, 95), font, 1, (0, 0, 255), 2)
             frame = cv2.putText(frame, "Captured Images" + str(c), (300, 420), font, 1, (0, 0, 255), 2)
             roi= frame[100:400, 100:400]
             k = cv2.waitKey(1) & 0xFF
