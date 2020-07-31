@@ -24,32 +24,27 @@ def mapper(value):
 
 def winner(move_by_user, move_by_cmp):
 
+
     if move_by_cmp==move_by_user:
         print('Its a tie')
 
     if move_by_cmp== 'rock':
-        if move_by_user=='paper' :
-            print('User wins')
+        if move_by_user=='paper':
+            print('User wins!')
+        elif move_by_user == 'scissors':
+                print('Computer wins!')
 
     if move_by_cmp=='paper':
         if move_by_user=='scissors' :
-            print('User wins')
-
-    if move_by_cmp== 'paper':
-        if move_by_user=='rock' :
-            print('Computer wins')
+            print('User wins!')
+        elif move_by_user=='rock' :
+            print('Computer wins!')        
 
     if move_by_cmp=='scissors':
         if move_by_user =='rock':
             print('User wins')
-
-    if move_by_cmp =='scissors':
-        if move_by_user == 'paper':
+        elif move_by_user == 'paper':
             print('Computer wins')
-
-    if move_by_cmp =='rock':
-        if move_by_user == 'scissors' :
-            print('User wins')
 
     if move_by_user=='empty':
         print('Place your hand gesture correcty!')
